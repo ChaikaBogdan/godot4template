@@ -10,4 +10,4 @@
 [Godot Linter via GithubActions](https://github.com/Aristarhys/yagi?tab=readme-ov-file#example-static-check-action)
 
 # More hacks
-[Godot hacks gist](https://gist.github.com/ChaikaBogdan/df230d02532fd5bb76e19f14eb7c1624)
+[My Gist](https://gist.github.com/ChaikaBogdan/df230d02532fd5bb76e19f14eb7c1624)
