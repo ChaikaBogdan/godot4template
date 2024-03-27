@@ -5,3 +5,9 @@ Patterns:
 - [Saves formats](https://www.gdquest.com/tutorial/godot/best-practices/save-game-formats/)
 - [Event bus](https://www.gdquest.com/tutorial/godot/design-patterns/event-bus-singleton/)
 - [Singleton autoload](https://docs.godotengine.org/en/stable/tutorials/scripting/singletons_autoload.html)
+
+## Workflows
+[Godot linter](https://github.com/Aristarhys/yagi?tab=readme-ov-file#example-static-check-action)
+
+# More hacks
+[Some addional godot hacks](https://gist.github.com/ChaikaBogdan/df230d02532fd5bb76e19f14eb7c1624)
