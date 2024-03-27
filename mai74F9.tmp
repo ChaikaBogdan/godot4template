@@ -1,0 +1,61 @@
+[gd_scene load_steps=5 format=3 uid="uid://j8mj0m6n0hdi"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_pa1o1"]
+[ext_resource type="PackedScene" uid="uid://d38shpniomrmc" path="res://state_machine.tscn" id="2_lau6j"]
+[ext_resource type="Script" path="res://states/state1.gd" id="3_4644b"]
+[ext_resource type="Script" path="res://states/state2.gd" id="4_82iab"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_pa1o1")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="VBoxContainerLeft" type="VBoxContainer" parent="CenterContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="NextScene" type="Button" parent="CenterContainer/HBoxContainer/VBoxContainerLeft"]
+layout_mode = 2
+text = "Scene1"
+
+[node name="SaveButton" type="Button" parent="CenterContainer/HBoxContainer/VBoxContainerLeft"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Save"
+
+[node name="LoadButton" type="Button" parent="CenterContainer/HBoxContainer/VBoxContainerLeft"]
+layout_mode = 2
+text = "Load"
+
+[node name="ExitButton" type="Button" parent="CenterContainer/HBoxContainer/VBoxContainerLeft"]
+layout_mode = 2
+text = "Exit"
+
+[node name="VBoxContainerRight" type="VBoxContainer" parent="CenterContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="State" type="Label" parent="CenterContainer/HBoxContainer/VBoxContainerRight"]
+layout_mode = 2
+text = "State: INIT"
+
+[node name="Scene" type="Label" parent="CenterContainer/HBoxContainer/VBoxContainerRight"]
+layout_mode = 2
+text = "Scene: INIT"
+
+[node name="StateMachine" parent="." instance=ExtResource("2_lau6j")]
+initial_state = NodePath("State1")
+
+[node name="State1" type="Node" parent="StateMachine"]
+script = ExtResource("3_4644b")
+
+[node name="State2" type="Node" parent="StateMachine"]
+script = ExtResource("4_82iab")
+
+[connection signal="button_up" from="CenterContainer/HBoxContainer/VBoxContainerLeft/NextScene" to="." method="_on_next_scene_button_up"]
+[connection signal="button_up" from="CenterContainer/HBoxContainer/VBoxContainerLeft/SaveButton" to="." method="_on_save_button_button_up"]
+[connection signal="button_up" from="CenterContainer/HBoxContainer/VBoxContainerLeft/LoadButton" to="." method="_on_load_button_button_up"]
+[connection signal="button_up" from="CenterContainer/HBoxContainer/VBoxContainerLeft/ExitButton" to="." method="_on_exit_button_button_up"]

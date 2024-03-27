@@ -1,0 +1,32 @@
+[gd_scene load_steps=2 format=3 uid="uid://dm0gldjs0tl8i"]
+
+[ext_resource type="Script" path="res://scenes/scene1.gd" id="1_jcf2l"]
+
+[node name="Scene1" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jcf2l")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 0
+offset_right = 1151.0
+offset_bottom = 648.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="Name" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Scene1"
+horizontal_alignment = 1
+
+[node name="BackButton" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Main scene
+"
+
+[connection signal="button_up" from="CenterContainer/VBoxContainer/BackButton" to="." method="_on_back_button_button_up"]

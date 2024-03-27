@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dofa8srprcdov"]
+
+[ext_resource type="Script" path="res://scene_manager.gd" id="1_sbaji"]
+
+[node name="SceneManager" type="Node"]
+script = ExtResource("1_sbaji")
+scenes = {
+"main": "res://main.tscn",
+"scene1": "res://scenes/scene1.tscn"
+}
